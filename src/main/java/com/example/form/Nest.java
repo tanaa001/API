@@ -4,6 +4,9 @@ public class Nest {
     public String password;
     public String name;
     public String id;
+    public String number;
+    public String position;
+    public String user_comment;
     
     public String getPassword() {
 		return password;
@@ -23,4 +26,22 @@ public class Nest {
 	public void setId(String id) {
 		this.id = id;
 	}
- }
+	public String getNumber() {
+		return number;
+	}
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	public String getPosition() {
+		return position;
+	}
+	public void setPosition(String position) {
+		this.position = position;
+	}
+	public String getUser_comment() {
+		return user_comment;
+	}
+	public void setUser_comment(String user_comment) {
+		this.user_comment = user_comment;
+	}
+}
