@@ -75,7 +75,7 @@ public class Controller {
 		return response;
 	}
 
-	@RequestMapping(value = "/menberList",
+	@RequestMapping(value = "/memberList",
 			// Jsonをリクエストにする設定
 			consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@CrossOrigin
