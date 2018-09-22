@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.form.Body;
 import com.example.form.Nest;
 import com.example.form.Response;
+import com.example.form.ScheduleList;
 
 @RestController
 @Validated
@@ -84,34 +85,75 @@ public class Controller {
 
 		Response response = new Response();
 		System.out.println("sql実行_メンバー一覧");
-		
 
 		List<Map<String, Object>> list2 = jdbcTemplate.queryForList("SELECT * FROM users");
-//		String strName = list2.get(0).get("name").toString();
-//		String strPassword = list2.get(0).get("password").toString();
-//		String strId = list2.get(0).get("id").toString();
-//		String position = list2.get(0).get("position").toString();
-//		String user_comment = list2.get(0).get("user_comment").toString();
-//		String number = list2.get(0).get("number").toString();
-		
-//		String msg = messageSource.getMessage("search.goodcondition", null, Locale.JAPANESE);
+		// String strName = list2.get(0).get("name").toString();
+		// String strPassword = list2.get(0).get("password").toString();
+		// String strId = list2.get(0).get("id").toString();
+		// String position = list2.get(0).get("position").toString();
+		// String user_comment = list2.get(0).get("user_comment").toString();
+		// String number = list2.get(0).get("number").toString();
+
+		// String msg = messageSource.getMessage("search.goodcondition", null,
+		// Locale.JAPANESE);
 
 		System.out.println("response");
 		System.out.println(list2);
 		System.out.println("response");
 
-//		nest.setName(strName);
-//		nest.setPassword(strPassword);
-//		nest.setId(strId);
-//		nest.setPosition(position);
-//		nest.setUser_comment(user_comment);
-//		nest.setNumber(number);
-//		response.setResponse(nest);
-//		response.setMassage(msg);
-//		response.setResult("true");
+		// nest.setName(strName);
+		// nest.setPassword(strPassword);
+		// nest.setId(strId);
+		// nest.setPosition(position);
+		// nest.setUser_comment(user_comment);
+		// nest.setNumber(number);
+		// response.setResponse(nest);
+		// response.setMassage(msg);
+		// response.setResult("true");
 
 		System.out.println(response);
 
 		return list2;
 	}
+
+	@RequestMapping(value = "/scheduleList",
+			// Jsonをリクエストにする設定
+			consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@CrossOrigin
+	public List<Map<String, Object>> scheduleList(@Validated @RequestBody ScheduleList scheduleList) {
+		Nest nest = new Nest();
+
+		Response response = new Response();
+		System.out.println("sql実行_スケジュール一覧");
+
+		List<Map<String, Object>> list2 = jdbcTemplate.queryForList("SELECT * FROM schedule");
+		// String strName = list2.get(0).get("name").toString();
+		// String strPassword = list2.get(0).get("password").toString();
+		// String strId = list2.get(0).get("id").toString();
+		// String position = list2.get(0).get("position").toString();
+		// String user_comment = list2.get(0).get("user_comment").toString();
+		// String number = list2.get(0).get("number").toString();
+
+		// String msg = messageSource.getMessage("search.goodcondition", null,
+		// Locale.JAPANESE);
+
+		System.out.println("response");
+		System.out.println(list2);
+		System.out.println("response");
+
+		// nest.setName(strName);
+		// nest.setPassword(strPassword);
+		// nest.setId(strId);
+		// nest.setPosition(position);
+		// nest.setUser_comment(user_comment);
+		// nest.setNumber(number);
+		// response.setResponse(nest);
+		// response.setMassage(msg);
+		// response.setResult("true");
+
+		System.out.println(response);
+
+		return list2;
+	}
+
 }

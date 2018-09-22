@@ -1,14 +1,9 @@
 package com.example.form;
 
-import javax.validation.constraints.NotBlank;
-
-//リクエストボディの中身
-public class Body {
-	@NotBlank
+public class ScheduleList {
 
 	public String password;
 	public String name;
-	public String id;
 
 	public String getPassword() {
 		return password;
@@ -26,11 +21,4 @@ public class Body {
 		this.name = name;
 	}
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 }
